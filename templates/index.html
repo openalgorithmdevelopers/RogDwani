@@ -53,12 +53,24 @@
  </div>
    <br>
 <div class="container">
-  <div>      
+  <div id="alignmemtset">      
     <div class="row"> 
-        <h5 class="col-md-3"><b>Patient Name :</b><span>Mr. Anand Pandey</span> </h1>
-        <h5 class="col-md-3"><b>Age:</b><span>56</span></h1>
-        <h5 class="col-md-3"><b>Last Visit: </b><span>30 days ago</span> </h1>
-        <h5 class="col-md-3"><b>Last Diagnosis: </b><span>Healthy Lung Sounds</span></h1>
+        <p class="col-lg-3 col-md-3" >
+          <label for="Name">Patient Name:</label>
+          <input type="text" id="Name" name="Name" placeholder="Mr. Anand Pandey" size="15">
+        </p>
+        <p class="col-lg-2 col-md-3">
+          <label for="Name">Age:</label>
+          <input type="text" id="Name" name="Name" placeholder="56" size="2">
+        </p>
+        <p class="col-lg-3 col-md-3">
+          <label for="Name">Last Visit:</label>
+          <input type="text" id="Name" name="Name" placeholder="30 days ago" size="10"></h5>
+        </p>
+        <p class="col-lg-4 col-md-3">
+          <label for="Name">Last Diagnosis:</label>
+          <input type="text" id="Name" name="Name" placeholder="Healthy Lung Sounds" size="20"></p>
+        
     </div>      
 </div>
   <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
@@ -87,6 +99,9 @@
   </form>
   </div>
 </div>
+<div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
 </body>
   <script type='text/javascript'>
     // window.onload = function plot() {
