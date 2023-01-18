@@ -129,6 +129,7 @@
             // Plotly.extendTraces('myDiv', { y: [[datas]] }, [0])
             {
               value = datas[i]              
+              var config = {responsive: true}
               Plotly.extendTraces(plotDiv, { y: [[value]] }, [0])
             }
           }
