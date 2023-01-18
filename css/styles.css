@@ -1,6 +1,10 @@
-#mainHeading2{
+#mainHeading{
     font: bold 300% Consolas, Monaco, monospace;
-    border-right: .1em solid black;
+    margin: 2% 5%;
+}
+#mainHeading2{
+    font: bold 200% Consolas, Monaco, monospace;
+    /* border-right: .1em solid black; */
 	width: 16.5em; 
 	width: 30ch;
 	margin: 5% auto;
@@ -11,3 +15,11 @@
 
 @-webkit-keyframes typing { from { width: 0; } }
 @-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
+/* image css*/
+.pull-center{
+    width: 5%;
+    height: 5%;
+    margin:auto;
+    display: flex;
+
+}
