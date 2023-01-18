@@ -1,5 +1,5 @@
 body{
-    background-color: #F5EFE6;
+    background-color: #F4F4F2;
 }
 #Titleheading{
 }
@@ -12,7 +12,7 @@ body{
     width: 25%;
 }
 .topnav {
-    /* background-color: #AEBDCA; */
+    /* background-color: #BBBFCA; */
     overflow: hidden;
     padding: 1%;
     margin: auto;
@@ -78,7 +78,7 @@ body{
 }
 .time { 
     /* margin:100px auto; */
-      background: #AEBDCA;
+      background: #BBBFCA;
       color: #fff;
       border: 5px solid rgb(255, 252, 252);
       box-shadow: 0 2px 10px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
