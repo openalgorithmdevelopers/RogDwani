@@ -76,6 +76,9 @@ body{
 
  
 }
+.forclock{
+    float:right;
+}
 .time { 
     /* margin:100px auto; */
       background: #BBBFCA;
@@ -100,4 +103,44 @@ body{
   }
   .date {
       font-size: 1vw;
+  }
+
+@media only screen and (max-device-width: 480px){
+    /*clock*/
+#clock{
+    font-family: "Work Sans", sans-serif;
+    display: block;
+    margin: 1%;
+    margin-top: 0;
+
+ 
+}
+.forclock{
+    float:center;
+}
+.time { 
+    /* margin:100px auto; */
+      background: #BBBFCA;
+      color: #fff;
+      border: 5px solid rgb(255, 252, 252);
+      box-shadow: 0 2px 10px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+      padding: 8px;
+      text-align: center;
+      width: auto;
+      margin:auto 2%;
+  }
+  .hms {
+      font-size: 3vw;
+      font-weight: 200;
+  }
+  .ampm {
+      font-size: 1.7vw;
+      display: inline;
+      margin: 1%;
+      margin-bottom:0;
+      margin-left: 2%;
+  }
+  .date {
+      font-size: 1vw;
+  }
   }
