@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>    
+  </head>
+ <body onload="plot();">
+  <div class="container">
+  <div class="">
+    <h1 id="mainHeading" class="mb-3 text-center display-1"><b>Digital Stethoscope Dash Board</b></h1>
+  <!-- </div> -->
+  <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+  <form action="/sendData" method="POST">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputState">Signal Quality</label>
+        <select name="signalQuality" id="signalQuality" class="form-control">
+          <option selected>Low</option>
+          <option>Low</option>
+          <option>Medium</option>
+          <option>High</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputState">Signal Duration</label>
+        <select name="signalDuration" id="signalDuration" class="form-control">
+          <option selected>Long : 5 sec</option>
+          <option>Short : 0.1 sec</option>
+          <option>Medium : 1 sec</option>
+          <option>Long : 5 sec</option>
+        </select>
+      </div>
+    </div>
+    <button id="btnStart" class="btn btn-primary btn-lg btn-block">Start</button>
+  </form>
+  </div>
+</div>
+</body>
+  <script type='text/javascript'>
+    // window.onload = function plot() {
+    var interval;
+    var plotDiv = 'myDiv';
+    function plot() {
+
+      Plotly.newPlot(plotDiv, [{
+        y: [],
+        mode: 'lines',
+        line: {color: '#80CAF6'}
+      }]);
+
+      var cnt = 0;
+
+      interval = setInterval(function updatePlot() 
+      {                    
+        let external = fetch("/getData");
+
+        external.then(res =>
+          res.json()).then(d => {
+            var datas = d.data;             
+            // console.log(datas)
+            for(var i = 0; i < datas.length; i++)
+            // Plotly.extendTraces('myDiv', { y: [[datas]] }, [0])
+            {
+              value = datas[i]              
+              Plotly.extendTraces(plotDiv, { y: [[value]] }, [0])
+            }
+          }
+        )
+
+        if(++cnt === 100) clearInterval(interval);
+      }, 1000);
+    }
+    // $(function() {
+    //       $('#btnStart').on('click', function(e) {
+    //         let external = fetch("/sendData");
+    //         Session["controlMsg"] ="This is my session";
+    //         external.then(res =>
+    //           res.json()).then(d => {
+    //             //do nothing
+    //             // var quality = document.getElementById("signalQuality").value;
+    //             // var duration = document.getElementById("signalDuration").value;                                
+
+    //             document.getElementById("mainHeading").innerHTML += " Updating!"; 
+    //             clearInterval(interval);
+    //             // Plotly.deleteTraces(plotDiv, 0);
+   
+    //             plot();
+    //             // updatePlot();
+    //             // console.log(document.getElementById(plotDiv).y);
+    //           }
+    //         )
+    //       });
+    //     });
+  </script>
+</html>
