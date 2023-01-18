@@ -7,10 +7,23 @@
     <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>    
   </head>
  <body onload="plot();">
+  <!-- <body> -->
   <div class="container">
-  <div class="">
-    <h1 id="mainHeading" class="mb-3 text-center display-1"><b>Digital Stethoscope Dash Board</b></h1>
-  <!-- </div> -->
+  <div class="row">
+    <!-- <div> -->
+      <img src="./images/RogDhwani-logos/human_upper_body.png" class="pull-center" width="45px" height="45px">
+      <h1 id="mainHeading" class="border col col-md-6 text-right"><b>RogDhwani</b></h1>  
+    <!-- </div> -->
+    <h4 id="mainHeading2" class="col col-md-6 text-right"><b>Welcome Dr. Sumit Sharma</b></h1>
+  </div>
+  <div>      
+    <div class="row"> 
+        <h5 class="col-md-3"><b>Patient Name </b> Mr. Anand Pandey</h1>
+        <h5 class="col-md-3"><b>Age:</b> 56</h1>
+        <h5 class="col-md-3"><b>Last Visit: </b>30 days ago</h1>
+        <h5 class="col-md-3"><b>Last Diagnosis: </b>Healthy Lung Sounds</h1>
+    </div>      
+</div>
   <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
   <form action="/sendData" method="POST">
     <div class="form-row">

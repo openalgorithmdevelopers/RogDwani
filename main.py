@@ -60,6 +60,8 @@ dataListShared = list()
 def getSignalFromMsg(message):   
     global dataPoints 
     keyDataPair = message.split(',')
+#    print("Key data pair is")
+#    print(keyDataPair)
     # print(keyDataPair)
     # print("data printed")
     for i in keyDataPair:
@@ -69,8 +71,8 @@ def getSignalFromMsg(message):
         #################### Better to use signal filtering approaches ############
         dataPoints += 1
         value = int(i)
-        if( value < 300):
-            continue
+#        if( value < 300):
+#            continue
         ###########################################################################
         dataList.append(value)
         dataListShared.append(value)        
