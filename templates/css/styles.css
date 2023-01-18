@@ -88,11 +88,11 @@ body{
       margin:auto 2%;
   }
   .hms {
-      font-size: 2.5vw;
+      font-size: 3vw;
       font-weight: 200;
   }
   .ampm {
-      font-size: 1.5vw;
+      font-size: 1.7vw;
       display: inline;
       margin: 1%;
       margin-bottom:0;
